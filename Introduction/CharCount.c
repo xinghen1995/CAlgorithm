@@ -1,0 +1,15 @@
+//: CharCount.c
+// Created by XPL on 2019/12/22.
+#include <stdio.h>
+
+int main() {
+    long nc;
+
+    nc = 0;
+    while (getchar() != EOF) {
+        nc++;
+    }
+    printf("%ld\n", nc);
+}
+
+///:~
