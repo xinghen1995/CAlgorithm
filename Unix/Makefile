@@ -1,7 +1,9 @@
+exec_dir = ../bin
+
 all: TimeDemo StrftimeDemo LowerIO GetCharByLowerIOBuffer CopyByLowerIO
 
 TimeDemo: TimeDemo.c
-	gcc -g TimeDemo.c -o ../bin/TimeDemo
+	gcc -g TimeDemo.c -o $(exec_dir)/TimeDemo
 
 StrftimeDemo: StrftimeDemo.c
 	gcc -g StrftimeDemo.c -o ../bin/StrftimeDemo
@@ -17,3 +19,7 @@ GetCharByLowerIOBuffer: GetCharByLowerIOBuffer.c
 
 CopyByLowerIO: CopyByLowerIO.c Error.c
 	gcc -g CopyByLowerIO.c Error.c -o ../bin/CopyByLowerIO
+
+.PHONY: clean
+clean:
+	rm -rf *.o ../bin
