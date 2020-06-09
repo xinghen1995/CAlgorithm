@@ -1,6 +1,6 @@
 .PHONY: all 
 
-objs := $(LEET_DIR)/c001 $(LEET_DIR)/c002 $(LEET_DIR)/c003
+objs := $(LEET_DIR)/c001 $(LEET_DIR)/c002 $(LEET_DIR)/c003 $(LEET_DIR)/c004
 
 all: $(objs);
 
@@ -15,6 +15,11 @@ $(LEET_DIR)/c002: c002.c
 	@$(CC) $(CFLAGS) -o $@ $<
 
 $(LEET_DIR)/c003: c003.c
+	@mkdir -p $(@D)
+	@echo LD ++ $@
+	@$(CC) $(CFLAGS) -o $@ $<
+
+$(LEET_DIR)/c004: c004.c
 	@mkdir -p $(@D)
 	@echo LD ++ $@
 	@$(CC) $(CFLAGS) -o $@ $<
