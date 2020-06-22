@@ -9,17 +9,17 @@ int lengthOfLongestSubstring(char * s) {
     head = tail = s;
 
     while (*tail != '\0') {
-        if (dict[*tail] != 0) {
+        if (dict[(size_t)*tail] != 0) {
             while (*head != *tail) {
                 if (len > max) max = len;
-                dict[*head] = 0;
+                dict[(size_t)*head] = 0;
                 len--;
                 head++;
             }
             len--;
             head++;
         }
-        dict[*tail] = 1;
+        dict[(size_t)*tail] = 1;
         len++;
         tail++;
     }
